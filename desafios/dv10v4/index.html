@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Animação Vai e Volta</title>
+  <style>
+    .botao {
+      display: block;
+      margin: auto;
+      position: relative;
+      padding: 15px 30px;
+      font-size: 16px;
+      color: white;
+      background-color: #333;
+      border: none;
+      cursor: pointer;
+      overflow: hidden;
+    }
+
+    .botao::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(to right, #ff6a00, #ffb347);
+      z-index: 0;
+      animation: volta 0.5s forwards; /* animação ao tirar o mouse */
+    }
+
+    .botao:hover::before {
+      animation: deslizar 0.5s forwards; /* animação ao passar o mouse */
+    }
+
+    .botao span {
+      position: relative;
+      z-index: 1;
+    }
+
+    /* Animação indo para a direita */
+    @keyframes deslizar {
+      from {
+        left: -100%;
+      }
+      to {
+        left: 0;
+      }
+    }
+
+    /* Animação voltando para a esquerda */
+    @keyframes volta {
+      from {
+        left: 0;
+      }
+      to {
+        left: -100%;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <button class="botao"><span>Passe o Mouse</span></button>
+
+</body>
+</html>

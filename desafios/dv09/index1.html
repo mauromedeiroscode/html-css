@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meus Videos</title>
+    <style>
+        body {
+            background-color: rgba(31, 31, 31, 0.829);
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        img {
+            max-width: 100%;
+        }
+
+        #voltar {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            position: absolute, top 50%, left 50%;
+            transform: translate(800%, 500%);
+            transition: transform 0.5s ease-in-out;
+            cursor: pointer;
+        }
+
+        #voltar:hover {
+            transform: translate(770%, 500%);   
+        }
+
+        .video-conteiner {
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+            height: 325px;
+            max-width: 100%;
+            position: absolute, top 50%, left 50%;
+            transform: translate(125%, 10%);
+            transition: 0.55s;
+        }
+
+        .video-conteiner:hover {
+            height: 330px;
+            min-width: 30%;
+            background-color: white;
+        }
+    </style>
+</head>
+<body>
+    <div class="video-conteiner">
+        <iframe class="video" width="560" height="315" src="https://www.youtube.com/embed/epDCjksKMok?si=6O9gRJt5plLv9KDo" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+    </div>
+
+    <a id="voltar" href="index.html"><img src="imagens/voltar.png" alt="botao-voltar"></a>
+</body>
+</html>

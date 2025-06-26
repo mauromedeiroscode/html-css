@@ -1,0 +1,241 @@
+@charset "UTF-8";
+
+@import url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@200..900&display=swap');
+
+@keyframes deslizar {
+
+    from {
+        left: -100%;
+    }
+
+    to {
+        left: 0%;
+    }
+}
+
+@keyframes voltar {
+
+    from {
+        left: 0%;
+    }
+
+    to {
+        left: -100%;
+    }
+
+}
+
+@font-face {
+    font-family: tech;
+    src: url(../Fontes/ShareTech-Regular.ttf), format(ttf);
+}
+
+
+:root {
+
+    --cor1: #F2E3D5;
+    --cor2: #3CA6A6;
+    --cor3: #026773;
+    --cor4: #024959;
+    --cor5: #012E40;
+
+    --font-padrão: Arial, helvetica, verdana;
+    --font-destaque: 'inconsolata', 'cursive';
+    --font-tech: 'tech', 'cursive';
+}
+
+body {
+    margin: 0;
+}
+
+
+header {
+    background-image: linear-gradient(to bottom, var(--cor3), var(--cor5));
+    color: white;
+    padding: 40px;
+    text-align: center;
+}
+
+header h1 {
+    font-family: var(--font-destaque);
+    font-size: 2rem;
+    font-weight: normal;
+    text-shadow: 2px 2px 10px black;
+    padding-bottom: 15px;
+}
+
+header p {
+    font-family: var(--font-padrão);
+    min-width: 300px;
+    max-width: 600px;
+    font-size: 1.05rem;
+    font-weight: normal;
+    text-shadow: 2px 2px 10px black;
+    margin: auto;
+}
+
+#bd {
+    background-color: var(--cor1);
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.menu {
+    font-family: Arial, Helvetica, sans-serif;
+    background: var(--cor5);
+    box-shadow: 2px 2px 10px black;
+    padding: 1rem;
+    width: 95.71%;
+    /* Ocupa a largura toda no mobile */
+    height: 30px;
+    /* Altura pequena */
+    transition: all 0.3s ease;
+}
+
+.menu a {
+    position: relative;
+    font-family: var(--font-padrão);
+    font-weight: normal;
+    overflow: hidden;
+    cursor: pointer;
+    text-decoration: none;
+    padding: 5px 10px 10px 10px;
+    color: white;
+    display: inline-flex;
+    z-index: 0;
+    border-radius: 10px;
+}
+
+.menu a::before {
+    content: "";
+    position: absolute;
+    background-image: linear-gradient(to left, var(--cor3), var(--cor5));
+    top: 0;
+    left: -100%;
+    width: 90%;
+    height: 90%;
+    animation: voltar 1s forwards;
+}
+
+.menu a span {
+    position: relative;
+    z-index: 1;
+}
+
+.menu a:hover::before {
+    animation: deslizar 1s forwards;
+}
+
+main {
+    flex: 1;
+    padding: 1.5rem;
+    background-color: white;
+    min-width: 250px;
+    height: 90vh;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    margin-bottom: 30px;
+}
+
+main h1 {
+    font-family: var(--font-tech);
+    font-size: 2.5rem;
+    font-weight: normal;
+}
+
+main h2 {
+    font-weight: normal;
+    padding: 2.5px;
+    font-family: var(--font-tech);
+    color: white;
+    background-image: linear-gradient(to right, var(--cor4), var(--cor5) 50%, transparent);
+}
+
+main p {
+    text-indent: 5%;
+    font-family: var(--font-padrão);
+    font-size: 1.1rem;
+    line-height: 2;
+    text-align: justify;
+    min-width: 300px;
+    max-width: 1000px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    margin: auto;
+}
+
+main .especial {
+    padding-top: 50px;
+}
+
+aside {
+    position: relative;
+    background-color: var(--cor4);
+    color: white;
+    padding: 15px;
+    border-radius: 20px;
+    margin: auto;
+}
+
+aside h3 {
+    background-color: var(--cor5);
+    margin: -15px -15px 20px -15px;
+    padding: 10px;
+    text-indent: 10px;
+    font-family: var(--font-tech);
+    font-weight: normal;
+    letter-spacing: 1px;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+}
+
+aside ul {
+    list-style-position: inside;
+    padding-right: 250px;
+    font-family: var(--font-padrão);
+    font-weight: normal;
+    font-size: 1.2rem;
+}
+
+/* Quando a tela for maior (PC) */
+@media (min-width: 768px) {
+    #bd {
+        flex-direction: row;
+        /* Lado a lado */
+    }
+
+    .menu {
+        margin: 15px 15px;
+        width: 200px;
+        /* Fica estreito */
+        height: 50vh;
+        /* Cresce na vertical */
+    }
+
+    a {
+        display: flex;
+        font-size: 1.4em;
+        padding: 1rem;
+    }
+
+    main {
+        flex: 1;
+        margin: 30px;
+        min-height: 150vh;
+        max-height: 200vh;
+    }
+}
+
+footer {
+    background-color: var(--cor5);
+    margin: 0px;
+}
+
+footer p {
+    color: white;
+    margin: 0px;
+    text-align: center;
+    padding: 10px;
+}

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>imagens flexiveis</title>
+    <style>
+        body{
+            background-image: linear-gradient(to bottom, rgba(255, 192, 203, 0.795), rgba(255, 255, 255, 0.719));
+            background-attachment: fixed;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+        }
+    </style>
+</head>
+<body>
+    <h1>Imagen Flexível</h1>
+    <p>Você está vendo a imagen completa? Experimente ampliar o tamanho da <br> 
+        sua janela para aproveitar melhor a expêriencia &#x1F92F</p>
+    <picture>
+        <source media="(min-width: 1000px)" srcset="imagens/koenisegg-g.jpg" type="image/jpg">
+        <source media="(min-width: 768px)" srcset="imagens/koenisegg-m.jpg" type="image/jpg">
+        <source media="(min-width: 600px)" srcset="imagens/koenisegg-p.jpg" type="image/jpg">
+        <img src="imagens/koenisegg-p.jpg" alt="imagen principal">
+    </picture>
+</body>
+</html>
