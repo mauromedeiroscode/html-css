@@ -27,7 +27,7 @@ header {
     background-color: white;
     padding: 30px;
     text-align: center;
-    min-width: 300px;   
+    min-width: 300px;
 }
 
 header h1 {
@@ -52,11 +52,11 @@ header p {
 }
 
 nav {
-   background-color: white;
-   padding: 15px;
-   box-shadow: 2px 2px 2px var(--cor3);
-   min-width: 300px;
-   max-width: 625;   
+    background-color: white;
+    padding: 15px;
+    box-shadow: 2px 2px 2px var(--cor3);
+    min-width: 300px;
+    max-width: 625;
 }
 
 nav a {
@@ -71,7 +71,7 @@ main {
     background-color: white;
     margin: 30px auto;
     padding: 40px;
-    min-width: 300px;   
+    min-width: 300px;
     max-width: 675px;
 }
 
@@ -93,13 +93,34 @@ main h2 {
     padding-bottom: 10px;
 }
 
+.cfg-p {
+    text-indent: 15%;
+}
+
 main p {
     font-family: var(--font-normal);
     font-size: 1.05em;
     font-weight: normal;
-    text-indent: 10%;
+    padding-bottom: 20px;
 }
 
-footer {
+main ul {
+    list-style-position: inside;
+    padding: 0px;
+    margin: 0px;
+}
+
+main li {
+    line-height: 1.5em;
+    margin: 20px;
+}
+
+main strong {
+    background-image: linear-gradient(to right, black 85%, transparent);
+    color: var(--cor2);
+    padding: 7px 25px 7px 7px;
+    border-radius: 10px;
 
 }
+
+footer {}
