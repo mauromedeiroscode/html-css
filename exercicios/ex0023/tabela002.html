@@ -19,9 +19,23 @@
             padding: 10px;
         }
 
+        caption {
+            font-size: 1.5em;
+            font-weight: bold;
+            padding: 10px;
+            background-color: lightgray;
+        }
+
         thead, tfoot {
             background-color: gray;
             color: white;
+        }
+        
+        tbody > tr:nth-child(odd) { /* 2n - 1*/
+            background-color: white;
+        }
+        tbody > tr:nth-child(even) { /* 2n */
+            background-color: lightgray;
         }
 
         td.num {
@@ -31,6 +45,7 @@
     </style>
 </head>
 <body>
+    
     <h1>Minha primeira tabela</h1>
     <!--
         HIERARQUIA DE TABELAS (simples)
@@ -52,16 +67,17 @@
     -->
 
     <table>
+        <caption>População das Unidades Federativas</caption>
         <thead>
             <tr>
-                <th>Estado</th>
-                <th>População</th>
+                <th scope="col">Estado</th>
+                <th scope="col" style="width: 50px;">População</th>
             </tr>
         </thead>
-        <tbody>
-            <tr>
+        <tfoot>
                 <td>São paulo</td>
                 <td class="num">45 973 194</td>
+        </tfoot>
             </tr>
             <tr>
                 <td>Minas Gerais</td>
@@ -168,12 +184,6 @@
                 <td class="num">716 793</td>
             </tr>
         </tbody>
-        <tfoot>
-            <tr>
-                <th>Total de Habitantes</th>
-                <td><strong>212 583 750</strong></td>
-            </tr>
-        </tfoot>
     </table>
 </body>
 </html>
